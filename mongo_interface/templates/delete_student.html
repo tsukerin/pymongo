@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Удалить студента</title>
+</head>
+<body>
+    <h1>Удалить студента</h1>
+    <ul>
+        <li><a href="{% url 'student_list' %}">Список студентов</a></li>
+        <li><a href="{% url 'create_student' %}">Добавить нового студента</a></li>
+    </ul>
+    <p>Вы уверены, что хотите удалить {{ student.name }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Да, удалить</button>
+    </form>
+</body>
+</html>

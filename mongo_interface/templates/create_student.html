@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить нового студента</title>
+</head>
+<body>
+    <h1>Добавить нового студента</h1>
+    <ul>
+        <li><a href="{% url 'student_list' %}">Список студентов</a></li>
+        <li><a href="{% url 'create_student' %}">Добавить нового студента</a></li>
+    </ul>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Имя и фамилия:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="faculty">Факультет:</label>
+        <input type="text" id="faculty" name="faculty"><br>
+        <button type="submit">Создать</button>
+    </form>
+</body>
+</html>

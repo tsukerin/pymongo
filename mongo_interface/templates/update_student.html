@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактировать информацию о студенте</title>
+</head>
+<body>
+    <h1>Редактировать информацию о студенте</h1>
+    <ul>
+        <li><a href="{% url 'student_list' %}">Список студентов</a></li>
+        <li><a href="{% url 'create_student' %}">Добавить нового студента</a></li>
+    </ul>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Имя и фамилия:</label>
+        <input type="text" id="name" name="name" value="{{ student.name }}"><br>
+        <label for="faculty">Факультет:</label>
+        <input type="text" id="faculty" name="faculty" value="{{ student.faculty }}"><br>
+        <button type="submit">Сохранить изменения</button>
+    </form>
+</body>
+</html>
